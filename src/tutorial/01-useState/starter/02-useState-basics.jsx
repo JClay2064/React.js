@@ -16,9 +16,3 @@ const UseStateBasics = () => {
 };
 
 export default UseStateBasics;
-git add src/tutorial/01-useState/starter/02-useState-basics.jsx
-git add src/index.css
-git add package.json
-git add package-lock.json  
-git add README.md
-git add .gitignore
