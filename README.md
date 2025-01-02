@@ -24,6 +24,66 @@ Rest of the content in the TUTORIAL.md
 
 #### useState
 
+### Code examples
+
+#### useState-basics.jsx (counter)
+```
+import { useState } from "react";
+
+const UseStateBasics = () => {
+  const [count ,setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount(count+1);
+  };
+  
+  return (
+  <div>
+    <h4>You clicked {count} times</h4>
+    <button type='button' className='btn' onClick={handleClick}>click me</button>
+  </div>
+  )
+};
+
+export default UseStateBasics;
+```
+
+### useState-array.jsx (name removal)
+```
+import {data} from '../../../data';
+import React from 'react';
+
+const UseStateArray = () => {
+  const [people, setPeople] = React.useState(data);
+
+  const removeItem = (id) => {
+    let newPeople = people.filter((person) => person.id !== id);
+    setPeople(newPeople);
+  }
+  
+  const clearAllItems = () => {
+    setPeople([]);
+  }
+
+  return (
+    <div>
+      {people.map((person) => {
+        const { id, name } = person;
+        return (
+          <div key={id}>
+            <h4>{name}</h4>
+            <button onClick={() => removeItem(id)}>remove</button>
+          </div>
+        )
+      })}
+      <button className='btn' onClick={clearAllItems}>clear items</button>
+    </div>
+  )
+};
+
+export default UseStateArray;
+```
+
 1. Birthday Reminder
 
 #### useEffect and Conditional Rendering
@@ -34,6 +94,12 @@ Rest of the content in the TUTORIAL.md
 5. Menu
 6. Tabs
 7. Slider
+
+
+
+
+
+
 
 #### Forms
 
