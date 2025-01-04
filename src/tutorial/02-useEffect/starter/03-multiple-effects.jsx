@@ -8,6 +8,7 @@ const MultipleEffects = () => {
 // it takes a callback function and an array of dependencies
 // if the dependencies array is empty, the callback function will run on every render
 // if the dependencies array is not empty, the callback function will run when the value of the dependency changes
+// Testing
    useEffect(() => {
      console.log('hello from first useEffect');
    }, [value]);
