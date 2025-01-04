@@ -4,13 +4,21 @@ const MultipleEffects = () => {
   const [value, setValue] = useState(0);
   const [secondValue, setSecondValue] = useState(0);
 
-  // useEffect(() => {
-  //   console.log('hello from first useEffect');
-  // }, []);
+// useEffect is a hook that allows us to perform side effects in our components 
+// it takes a callback function and an array of dependencies
+// if the dependencies array is empty, the callback function will run on every render
+// if the dependencies array is not empty, the callback function will run when the value of the dependency changes
+   useEffect(() => {
+     console.log('hello from first useEffect');
+   }, [value]);
 
-  // useEffect(() => {
-  //   console.log('hello from second useEffect');
-  // }, []);
+   useEffect(() => {
+     console.log('hello from second useEffect');
+   }, [secondValue]);
+
+
+
+
   return (
     <div>
       <h1>value : {value}</h1>
